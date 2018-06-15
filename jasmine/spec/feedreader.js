@@ -35,7 +35,7 @@ $(function() {
             allFeeds.forEach(function(feed){
                 expect(feed.url).toBeDefined();
                 expect(feed.url.length).not.toBe(0);
-            })
+            });
         });
 
         /* TODO: Write a test that loops through each feed
@@ -46,7 +46,7 @@ $(function() {
             allFeeds.forEach(function(feed){
                 expect(feed.name).toBeDefined();
                 expect(feed.name.length).not.toBe(0);
-            })
+            });
         });
     });
 
@@ -64,7 +64,26 @@ $(function() {
           * should have two expectations: does the menu display when
           * clicked and does it hide when clicked again.
           */
-    
+         describe('The menu',function(){
+            let body = document.querySelector('body');
+            let menu = body.children[1];
+            let spyEvent = spyOnEvent('.menu-icon-link','click');
+            it('is hidden by default',function(){
+                expect(body.className).toBe('menu-hidden');
+                expect(menu.className).toBe('slide-menu'); 
+            });
+            it('display when clicked and hide when clicked again',function(){
+                $('.menu-icon-link').click();
+                expect('click').toHaveBeenTriggeredOn('.menu-icon-link');
+                expect(spyEvent).toHaveBeenTriggered();
+                expect(body.className).toBe('');
+
+                $('.menu-icon-link').click();
+                expect('click').toHaveBeenTriggeredOn('.menu-icon-link');
+                expect(spyEvent).toHaveBeenTriggered();
+                expect(body.className).toBe('menu-hidden'); 
+            })
+        })
 
     /* TODO: Write a new test suite named "Initial Entries" */
 
