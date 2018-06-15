@@ -82,8 +82,8 @@ $(function() {
                 expect('click').toHaveBeenTriggeredOn('.menu-icon-link');
                 expect(spyEvent).toHaveBeenTriggered();
                 expect(body.className).toBe('menu-hidden'); 
-            })
-        })
+            });
+        });
 
     /* TODO: Write a new test suite named "Initial Entries" */
 
@@ -93,7 +93,19 @@ $(function() {
          * Remember, loadFeed() is asynchronous so this test will require
          * the use of Jasmine's beforeEach and asynchronous done() function.
          */
-
+        describe('Initial Entries',function(){
+            let container = document.querySelector(".feed");
+            beforeEach(function(done){
+                loadFeed(0,function(){
+                    done();
+                });                
+            });
+            it('should not be empty',function(done){
+                expect(container.childElementCount).not.toBe(0);
+                done();
+            });
+            
+                });
     /* TODO: Write a new test suite named "New Feed Selection" */
 
         /* TODO: Write a test that ensures when a new feed is loaded
