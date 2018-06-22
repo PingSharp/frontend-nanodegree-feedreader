@@ -13,6 +13,7 @@ $(function() {
     * a related set of tests. This suite is all about the RSS
     * feeds definitions, the allFeeds variable in our application.
     */
+   
     describe('RSS Feeds', function() {
         /* This is our first test - it tests to make sure that the
          * allFeeds variable has been defined and that it is not
@@ -66,11 +67,18 @@ $(function() {
           */
          describe('The menu',function(){
             let body = document.querySelector('body');
-            let menu = body.children[1];
+            let classArray =[];
             let spyEvent = spyOnEvent('.menu-icon-link','click');
             it('is hidden by default',function(){
                 expect(body.className).toBe('menu-hidden');
-                expect(menu.className).toBe('slide-menu'); 
+               
+                body.childNodes.forEach(function(child){
+                      if(child.className !== ''&& child.className !==undefined){
+                          classArray.push(child.className);
+                      }
+                })
+                
+                expect(classArray.includes('slide-menu')).toBe(true);
             });
             it('display when clicked and hide when clicked again',function(){
                 $('.menu-icon-link').click();
@@ -102,6 +110,7 @@ $(function() {
             });
             it('should not be empty',function(done){
                 expect(container.childElementCount).not.toBe(0);
+            
                 done();
             });
             
@@ -112,4 +121,25 @@ $(function() {
          * by the loadFeed function that the content actually changes.
          * Remember, loadFeed() is asynchronous.
          */
+        describe('New Feed Selection',function(){
+            let entryLinkBefore;
+            let entryLinkAfter;
+            beforeEach(function(done){
+                loadFeed(1,function(){
+                    entryLinkBefore = document.querySelector(".entry-link");
+                    done();
+                });   
+            });
+            beforeEach(function(done){
+                loadFeed(0,function(){
+                    entryLinkAfter = document.querySelector(".entry-link");
+                    done();
+                });
+            });
+            it('is Loaded',function(done){
+               expect(entryLinkAfter.href).not.toBe(entryLinkBefore.href);
+               done();
+               
+            })
+        });
 }());
