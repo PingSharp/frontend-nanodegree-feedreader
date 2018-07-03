@@ -71,7 +71,9 @@ $(function() {
             let spyEvent = spyOnEvent('.menu-icon-link','click');
             it('is hidden by default',function(){
                 expect(body.className).toBe('menu-hidden');
-               
+                /* Get all children and later check if there is a slide menu
+                * This is better than select via index (e.g. body.childNodes[0]) since we do not care the order
+                * */
                 body.childNodes.forEach(function(child){
                       if(child.className !== ''&& child.className !==undefined){
                           classArray.push(child.className);
@@ -81,11 +83,16 @@ $(function() {
                 expect(classArray.includes('slide-menu')).toBe(true);
             });
             it('display when clicked and hide when clicked again',function(){
+                /* Use JQuery to find element and execute the click method
+                 * After check if the className changed (from menu-hidden to '')
+                 * */
                 $('.menu-icon-link').click();
                 expect('click').toHaveBeenTriggeredOn('.menu-icon-link');
                 expect(spyEvent).toHaveBeenTriggered();
                 expect(body.className).toBe('');
-
+               /* Use JQuery to find element and execute the click method
+                 * After check if the className changed back (from '' back to menu-hidden)
+                 * */
                 $('.menu-icon-link').click();
                 expect('click').toHaveBeenTriggeredOn('.menu-icon-link');
                 expect(spyEvent).toHaveBeenTriggered();
@@ -124,7 +131,7 @@ $(function() {
         describe('New Feed Selection',function(){
             let entryLinkBefore;
             let entryLinkAfter;
-            beforeEach(function(done){
+            beforeAll(function(done){
                 loadFeed(1,function(){
                     entryLinkBefore = document.querySelector(".entry-link");
                     done();
