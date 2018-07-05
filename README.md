@@ -2,6 +2,27 @@
 
 In this project you are given a web-based application that reads RSS feeds. The original developer of this application clearly saw the value in testing, they've already included [Jasmine](http://jasmine.github.io/) and even started writing their first test suite! Unfortunately, they decided to move on to start their own company and we're now left with an application with an incomplete test suite. That's where you come in.
 
+## Getting Started
+
+###### Clone the repo to your local computer or download the Github zip file
+
+```
+$ git clone https://github.com/PingSharp/frontend-nanodegree-feedreader.git
+````
+
+###### After downloading, find and open this directory, open the index.html file with your favourite browser
+
+###### then you will see the Jasmine testing section under the main content.
+
+## Resources
+
+-[Google Fonts](https://fonts.google.com/specimen/Roboto?selection.family=Roboto:300,500,700)
+
+-[Jasmine(JavaScript Testing Framework)](https://github.com/jasmine/jasmine)
+
+-[Jasmine-Jquery](https://github.com/velesin/jasmine-jquery)
+
+-[JQuery](https://jquery.com/)
 
 ## Why this Project?
 
