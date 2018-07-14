@@ -18,13 +18,13 @@ $ git clone https://github.com/PingSharp/frontend-nanodegree-feedreader.git
 
 ## Resources
 
--[Google Fonts](https://fonts.google.com/specimen/Roboto?selection.family=Roboto:300,500,700)
+* [Google Fonts](https://fonts.google.com/specimen/Roboto?selection.family=Roboto:300,500,700)
 
--[Jasmine(JavaScript Testing Framework)](https://github.com/jasmine/jasmine)
+* [Jasmine(JavaScript Testing Framework)](https://github.com/jasmine/jasmine)
 
--[Jasmine-Jquery](https://github.com/velesin/jasmine-jquery)
+* [Jasmine-Jquery](https://github.com/velesin/jasmine-jquery)
 
--[JQuery](https://jquery.com/)
+* [JQuery](https://jquery.com/)
 
 ## Why this Project?
 
