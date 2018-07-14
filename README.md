@@ -2,17 +2,34 @@
 
 In this project you are given a web-based application that reads RSS feeds. The original developer of this application clearly saw the value in testing, they've already included [Jasmine](http://jasmine.github.io/) and even started writing their first test suite! Unfortunately, they decided to move on to start their own company and we're now left with an application with an incomplete test suite. That's where you come in.
 
+## Tools which are required or will be installed
+* Node (required)
+* NPM (required)
+* bower (required but will be installed if you follow steps)
+* frameworks see (Resources section)
+
 ## Getting Started
 
 * Clone the repo to your local computer or download the Github zip file
-
 ```
-
-$ git clone https://github.com/PingSharp/frontend-nanodegree-feedreader.git
-
-````
-
+# execute in your favourite shell (e.g. bash or powershell)
+git clone https://github.com/PingSharp/frontend-nanodegree-feedreader.git
+```
 * After downloading, find and open this directory
+```
+# execute in your favourite shell (e.g. bash or powershell, not cmd) if you used git
+cd ./frontend-nanodegree-feedreader
+```
+* install bower (if not already done)
+```
+# execute in your favourite shell (e.g. bash or powershell)
+npm install -g bower
+```
+* install jquery for jasmine with bower
+```
+# execute in your favourite shell (e.g. bash or powershell)
+bower install jasmine-jquery --save
+```
 * open the index.html file with your favourite browser (e.g. Firefox or Chrome)
 * you will see the Jasmine testing section under the main content.
 
