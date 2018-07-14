@@ -4,15 +4,17 @@ In this project you are given a web-based application that reads RSS feeds. The 
 
 ## Getting Started
 
-###### Clone the repo to your local computer or download the Github zip file
+* Clone the repo to your local computer or download the Github zip file
 
 ```
+
 $ git clone https://github.com/PingSharp/frontend-nanodegree-feedreader.git
+
 ````
 
-###### After downloading, find and open this directory, open the index.html file with your favourite browser
-
-###### then you will see the Jasmine testing section under the main content.
+* After downloading, find and open this directory
+* open the index.html file with your favourite browser (e.g. Firefox or Chrome)
+* you will see the Jasmine testing section under the main content.
 
 ## Resources
 
