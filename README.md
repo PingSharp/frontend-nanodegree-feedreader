@@ -6,7 +6,7 @@ In this project you are given a web-based application that reads RSS feeds. The 
 * Node (required)
 * NPM (required)
 * bower (required but will be installed if you follow steps)
-* frameworks see (Resources section)
+* frameworks see section : Resources
 
 ## Getting Started
 
